@@ -1,0 +1,141 @@
+# Setup the MySQL connection Here.
+# Note that you MUST create the database set in the
+# config file before initializing the plugin (jdbc).
+
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "prison_data"
+  username: "root"
+  password: "password"
+
+messages:
+  # This is when a player receives a certain amount of token xp.
+  token_receive: "&bYou have found %amount% tokens by mining this ore!"
+  # When a player levelups to the next token level.
+  # (He gets a token by completing a full token level)
+  token_level_up: "&bYou have leveled up to the next token level. (%amount%/%total% available tokens)"
+
+pickaxeconfig:
+  # This is the line that separates lore areas (for every pickaxe,
+  # there is going to be a certain line that separates level, enchantments and crystals;
+  # you have to either set it to " " if you just want a blank space to be
+  # searched for or a custom line like "&8&m------------")
+  lore_spacer: "&8&m---------------------"
+  # This message displays next to level & exp when a pickaxe is maxed out. (level 2000)
+  max_level: "&c&lMAXED OUT"
+  # Identifies where to place NBT placeholders for level. Don't use color codes.
+  level_identifier: "Level: "
+  # Identifies where to place NBT placeholders for exp. Don't use color codes.
+  exp_identifier: "EXP: "
+  # Formats level if item doesn't have it already.
+  level_format: "&6Level:&e "
+  # Formats exp if item doesn't have it already.
+  exp_format: "&6EXP:&e "
+  # Default increase for experience to next level.
+  default_exp_increment: "2500"
+  default_exp_to_next_level: 20000
+  # Action bar message for when a player mines a certain type of ore.
+  actionbar_message: "&b+ %amount% XP &e(%xp%&8/&e%xptonextlevel%)"
+  # Set how a crystal lore line should be displayed.
+  crystal_slot: "&c> &7+%percentage%% %type%"
+  empty_crystal_slot: "&8> &7Empty Crystal Slot"
+  locked_slots: "&cCrystals are locked for this tool!"
+  # Set how an enchantment lore line should be displayed.
+  enchantment_lore_line: "&e%enchantment% %power%"
+  # EXP given for ores.
+  exp:
+    stone: 1
+    cobblestone: 1
+    coal: 3
+    gold: 5
+    iron: 7
+    redstone: 5
+    diamond: 10
+    obsidian: 15
+    emerald: 9
+    # Set how much exp the player receives for mining any other block besides those listed beforehand.
+    else: 1
+  inventory_title: "&6Pickaxe Menu"
+  inventory:
+    exp_name: "&6Current EXP: &e%amount%"
+    exp_lore:
+      - "&8&m---------------------"
+      - "&7&oThis item displays info about"
+      - "&7&oyour current exp!"
+      - "&8&m---------------------"
+    enchants:
+      name: "&6%enchant% %ench_power%"
+      no_enchants: "&cNone"
+      lore:
+        - "&8&m---------------------"
+        - "&7&oClick the nether star above"
+        - "&7&oto open up the Crystals menu!"
+        - "&8&m---------------------"
+      no_enchants_lore:
+        - "&8&m---------------------"
+        - "&7&oYour pickaxe has no enchantments!"
+        - "&7&oImprove your tool by adding"
+        - "&7&osome enchantments to it!"
+        - "&8&m---------------------"
+      can_upgrade_lore:
+        - "&eRight-click to level up!"
+        - "&7&o(This will remove 1 token from"
+        - "&7&oyour account! You currently have: %amount%)"
+        - "&8&m---------------------"
+    crystals:
+      name: "&6Available Crystal Slots: &e%amount%"
+      lore:
+        - "&8&m---------------------"
+        - "&7&oClick to open up the Crystals"
+        - "&7&omenu where you can add different"
+        - "&7&obonuses to your tool!"
+        - "&8&m---------------------"
+      title: "&6Crystal Menu"
+      slot_locked: "&cLocked Slot"
+      rarity:
+        common: "&f&lCOMMON"
+        uncommon: "&9&lUNCOMMON"
+        rare: "&5&lRARE"
+      type:
+        sell_boost: "&e&lSell Boost"
+        token_boost: "&6&lToken Boost"
+        exp_boost: "&a&lEXP Boost"
+      crystal_name: "&5Booster Crystal"
+
+# Autoseller prices. Change as you wish!
+autosell:
+  prices:
+    stone: 10
+    cobblestone: 10
+    coal: 10
+    iron: 20
+    gold: 25
+    diamond: 25
+    redstone: 10
+    emerald: 30
+    lapis: 10
+    quartz: 15
+    glowstone: 10
+    endstone: 10
+    netherrack: 10
+    granite: 5
+    diorite: 5
+    andesite: 5
+    dirt: 10
+    sand: 15
+    gravel: 10
+    wood: 10
+    wool: 5
+
+enchants:
+  maxlevel:
+    lucky: 50
+    tokengreed: 1000
+    fortune: 2000
+    greed: 500
+    experienced: 25
+    lazy: 10
+    speed: 3
+    efficiency: 1000
+

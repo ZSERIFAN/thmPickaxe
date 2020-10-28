@@ -1,0 +1,8 @@
+name: PrisonCore
+version: 1.0
+author: thmihnea
+main: by.thmihnea.PrisonCore
+
+commands:
+  sellall:
+  createcrystal:
